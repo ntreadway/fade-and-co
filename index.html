@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fade & Co. — Barber Shop & Shave Parlor · Santa Ana, CA</title>
   <meta name="description" content="Fade & Co. Barber Shop and Shave Parlor in Santa Ana, CA. Premium cuts, fades, and straight-razor shaves. Walk-ins welcome.">
+  <meta property="og:title" content="Fade & Co. Barber Shop — Premium Fades & Cuts · Santa Ana, CA">
+  <meta property="og:description" content="Precision fades, classic cuts, and straight-razor shaves. Walk-ins welcome. Top-rated barber shop in Santa Ana.">
+  <meta property="og:image" content="https://videos.pexels.com/video-files/4177956/4177956-hd_1920_1080_30fps.mp4?poster">
+  <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://fadeandco.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fade & Co. Barber Shop — Premium Fades & Cuts">
+  <meta name="twitter:description" content="Precision fades, classic cuts, and straight-razor shaves. Walk-ins welcome.">
+  <meta name="keywords" content="barber shop, fade, haircut, straight razor shave, Santa Ana, CA">
+  <meta name="author" content="Fade & Co.">
+  <link rel="canonical" href="https://fadeandco.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
@@ -56,7 +67,7 @@
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 1001;
       padding: 20px 40px;
       display: flex;
       align-items: center;
@@ -130,16 +141,25 @@
     .nav-hamburger {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       cursor: pointer;
-      padding: 4px;
+      padding: 8px;
+      background: none;
+      border: none;
+      -webkit-appearance: none;
+      appearance: none;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-hamburger span {
       display: block;
-      width: 24px;
+      width: 26px;
       height: 2px;
-      background: var(--white);
+      background: var(--gold);
+      border-radius: 1px;
       transition: all 0.3s var(--smooth);
     }
 
@@ -167,6 +187,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: translateZ(0);
+      background: var(--bg);
+      display: block;
     }
 
     .hero-bg::after {
@@ -821,7 +844,8 @@
     .mobile-nav {
       position: fixed;
       inset: 0;
-      z-index: 200;
+      z-index: 1002;
+      pointer-events: none;
       background: rgba(0,0,0,0.95);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
@@ -834,7 +858,7 @@
       transition: transform 0.4s var(--sharp);
     }
 
-    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav.open { transform: translateX(0); pointer-events: auto; }
 
     .mobile-nav-close {
       position: absolute;
@@ -858,6 +882,13 @@
     .mobile-nav a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) and (min-width: 769px) {
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 14px 24px; }
+      .nav-links { gap: 20px; }
+      .nav-cta { padding: 8px 16px; font-size: 12px; }
+    }
+
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .about-inner { gap: 48px; }
@@ -931,6 +962,51 @@
     .fade-up-delay-4 { transition-delay: 0.4s; }
     .fade-up-delay-5 { transition-delay: 0.5s; }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fade & Co. Barber Shop",
+    "image": "https://videos.pexels.com/video-files/4177956/4177956-hd_1920_1080_30fps.mp4",
+    "description": "Premium barber shop offering precision fades, classic cuts, and straight-razor shaves in Santa Ana, California. Walk-ins welcome.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1602 N Grand Ave, Unit A",
+      "addressLocality": "Santa Ana",
+      "addressRegion": "CA",
+      "postalCode": "92701",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-714-617-5822",
+    "url": "https://fadeandco.com",
+    "priceRange": "$15-$45",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://instagram.com/fade.n.co",
+      "https://google.com/maps/place/Fade+Co+Barber+Shop"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -947,14 +1023,14 @@
         </a>
       </li>
     </ul>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn" onclick="openMobileNav()">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-    <button class="mobile-nav-close" id="menuClose" aria-label="Close menu">
+    <button class="mobile-nav-close" id="menuClose" aria-label="Close menu" onclick="closeMobileNav()">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
@@ -968,7 +1044,7 @@
   <!-- HERO -->
   <section class="hero" id="hero" aria-label="Hero">
     <div class="hero-bg" aria-hidden="true">
-      <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline preload="metadata" crossorigin="anonymous" onended="this.currentTime = 0">
         <source src="https://videos.pexels.com/video-files/4177956/4177956-hd_1920_1080_30fps.mp4" type="video/mp4">
       </video>
     </div>
@@ -1260,7 +1336,7 @@
   <footer>
     <div class="footer-logo">FADE <span>&</span> CO.</div>
     <p class="footer-copy">© 2024 Fade & Co. Barber Shop · Santa Ana, CA</p>
-    <nav class="footer-social" aria-label="Social media links">
+    <!-- <nav class="footer-social" aria-label="Social media links">
       <a href="https://instagram.com/fade.n.co" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -1273,7 +1349,7 @@
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.55 3.52 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.51a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
       </a>
-    </nav>
+    </nav> -->
   </footer>
 
   <script>
